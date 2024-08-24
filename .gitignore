@@ -1,3 +1,5 @@
 .env
 postgres/data/*
 cloudbeaver/data/*
+!postgres/data/.gitkeep
+!cloudbeaver/data/.gitkeep
