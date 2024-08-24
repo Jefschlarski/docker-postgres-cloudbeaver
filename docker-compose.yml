@@ -1,0 +1,51 @@
+version: '3.9'
+
+volumes:
+  postgres:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./postgres/data
+  cloudbeaver:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./cloudbeaver/data
+
+services:
+
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    volumes:
+      - type: volume
+        source: postgres
+        target: /data/postgres
+        volume:
+          nocopy: true 
+    ports:
+      - ${POSTGRES_PORTS}
+    networks:
+      - postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /data/postgres
+
+  cloudbeaver:
+    container_name: cloudbeaver
+    image: dbeaver/cloudbeaver:24
+    restart: always
+    ports:
+      - ${CLOUDBEAVER__PORTS}
+    networks:
+      - postgres
+    volumes:
+      - cloudbeaver:/opt/cloudbeaver/workspace
+
+networks:
+  postgres:
+    driver: bridge
