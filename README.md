@@ -88,6 +88,9 @@ Este setup oferece um ambiente de desenvolvimento rápido para trabalhar com Pos
 ## Referencias
 
 [DOCS DOCKER](https://docs.docker.com)
+
 [POSTGRES DOCKER HUB](https://hub.docker.com/_/postgres)
+
 [CLOUD BEAVER DOCKER HUB](https://hub.docker.com/r/dbeaver/cloudbeaver)
+
 [CLOUD BEAVER GIT WIKI](https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container)
