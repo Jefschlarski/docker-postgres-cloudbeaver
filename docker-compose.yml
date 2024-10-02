@@ -18,14 +18,12 @@ services:
 
   db:
     container_name: postgres
-    image: postgres
+    image: postgres:16-bullseye
     restart: always
     volumes:
       - type: volume
         source: postgres
         target: /data/postgres
-        volume:
-          nocopy: true 
     ports:
       - ${POSTGRES_PORTS}
     networks:
@@ -33,7 +31,6 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      PGDATA: /data/postgres
 
   cloudbeaver:
     container_name: cloudbeaver
