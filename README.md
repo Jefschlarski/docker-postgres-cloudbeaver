@@ -41,10 +41,10 @@ CLOUDBEAVER__PORTS=8080:8978
 Clone o repositório:
 
 ```bash
-git clone https://seu-repositorio.git
+git clone https://github.com/Jefschlarski/docker-postgres-cloudbeaver.git
 ```
 ```bash
-cd seu-repositorio
+cd docker-postgres-cloudbeaver
 ```
 
 ### Configuração do Arquivo `.env`
